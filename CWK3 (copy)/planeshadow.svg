@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="225"
+   height="65"
+   id="svg3968">
+  <defs
+     id="defs3972">
+    <filter
+       x="-0.056755971"
+       y="-0.16154481"
+       width="1.1135119"
+       height="1.3230896"
+       color-interpolation-filters="sRGB"
+       id="filter3846">
+      <feGaussianBlur
+         id="feGaussianBlur3848"
+         stdDeviation="3.666432" />
+    </filter>
+  </defs>
+  <image
+     xlink:href="planeshadow.gif"
+     x="27.752953"
+     y="4.32727"
+     width="155.03984"
+     height="54.470562"
+     id="image4933"
+     style="filter:url(#filter3846)" />
+</svg>

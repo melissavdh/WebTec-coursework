@@ -1,0 +1,174 @@
+html, body
+{ 
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body
+{
+    min-width: 680px;
+    max-width: 1680px;
+    background-color:#FFC2B1;
+    /*background-image:url('roof.jpg');
+    background-repeat:no-repeat;
+    background-position:center center;*/
+}
+
+div.header
+{
+    padding:0; margin:0;
+    width:100%;
+    background-color:#EE9572;
+    height:1.6em;
+    text-align:center;
+}
+
+div.content {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -1.6em;
+}
+
+div.footer
+{
+    height:1.6em;
+    padding-top:0; margin:0;
+    width:100%;
+    background-color:#EE9572;
+    text-align:center;
+    position:absolute;
+    color:#810C15;
+}
+
+.left-text
+{
+    float: left;
+    width: 35%;
+    line-height:1.6em;
+    text-align:left;
+}
+
+.center-text
+{ 
+    float:left;
+    width: 30%;
+    line-height:1.6em;
+    text-align:center;
+}
+
+.right-text
+{
+    float: right;
+    width: 31%;
+    text-align: right;
+    line-height:1.6em;
+}
+
+.header a:link, .header a:visited, .footer a:link, .footer a:visited
+{
+    display:block;
+    width:20%;
+    text-align:center;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color:#810C15;
+    text-decoration:none;
+    background-color:#EE9572;
+}
+
+.right-text a:link, .right-text a:visited
+{
+    float:right;
+}
+
+.header a:hover, .footer a:hover
+{
+    color:#810C15;
+    text-decoration:none;
+    background-color:#FFC2B1;
+}
+
+h1
+{
+    color:#A53039;
+    text-align:center;
+}
+
+p
+{
+    clear:both;
+    margin-left:15px;
+    margin-right:15px;
+    text-align:justify;
+}
+
+div.img
+{
+    margin-left:20px;
+    margin-right:20px;
+    border:1px solid #A53039;
+    height:auto;
+    width:auto;
+    float:left;
+    text-align:center;
+    display:block;
+}
+
+div.img img
+{
+    display:block;
+    margin:3px;
+    border:1px solid #EE9572;
+    text-align:center;
+}
+
+div.img a:hover img
+{
+    border:1px solid #FFDDBA;
+    background-color: #EE9572;
+    opacity:0.5;
+}
+div.desc
+{
+    text-align:center;
+    font-weight:normal;
+    width:12.5em;
+    margin:1px;
+}
+
+table.center {margin-left:auto; margin-right:auto;}
+#customers
+{
+width:50%;
+border-collapse:collapse;
+float:center;
+}
+
+#customers td, #customers th 
+{
+font-size:1em;
+border:1px solid #C98C7B;
+padding:3px 7px 2px 7px;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+#customers th 
+{
+font-size:1.1em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#C98C7B;
+color:#ffffff;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+#customers tr.alt td 
+{
+color:#000000;
+background-color:#F69E84;
+}

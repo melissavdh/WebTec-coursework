@@ -1,0 +1,7 @@
+<h1 lang="ar-ary" dir="rtl"> مرحباً، سلام علیک </h1>
+
+  <li><strong>Heading:</strong> I have two headings, one reading "marhaba" in Arabic 
+  script, which is Moroccan for "Welcome", and the other saying "Welcome" below.  
+  I have set the language of the Arabic text to be Arabic with the Moroccan dialect 
+  using lang="ar-ary", so that if someone uses a screen reader or Braille device 
+  then the Arabic will be pronounced properly.</li>

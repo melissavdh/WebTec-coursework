@@ -1,0 +1,299 @@
+html, body
+{ 
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body
+{
+    min-width: 680px;
+    max-width: 1680px;
+    background-color:#FFC2B1;
+    /*padding-bottom:1.6em;*/
+    font-size:100%;
+}
+
+div.header
+{
+    padding:0; margin:0;
+    width:100%;
+    background-color:#EE9572;
+    height:1.6em;
+    text-align:center;
+}
+
+div.content {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%; 
+    margin: 0 auto -1.6em;
+    /*padding-bottom:1.6em;*/
+    margin-left:15px;
+    margin-right:15px;
+}
+
+div.footer
+{
+    height:1.6em;
+    width:100%;
+    background-color:#EE9572;
+    text-align:center;
+    line-height:1.6em;
+    color:#810C15;
+    clear:both;
+    font-size:0.875em;
+    margin-top:1.6em;
+    bottom:0;
+    position:fixed;
+}
+
+h1
+{
+    color:#A53039;
+    text-align:center;
+}
+
+p
+{
+    clear:both;
+    text-align:justify;
+}
+
+div.leftcol, div.rightcol
+{
+    width:44%; text-align:justify;
+}
+
+div.leftcol
+{
+    float:left;
+    margin: 0 2% 0 4%;
+}
+
+div.rightcol
+{
+    float:right;
+    margin: 0 4% 0 2%;
+}
+
+span.img
+{
+    margin-left:1.5em;
+    margin-right:1.5em;
+    margin-bottom:1em;
+    border:1px solid #A53039;
+    height:auto;
+    text-align:center;
+    display:inline-block;;
+}
+
+span.img img
+{
+    margin:3px;
+    border:1px solid #EE9572;
+    text-align:center;
+}
+
+span.img a:hover img
+{
+    border:1px solid #FFDDBA;
+    background-color: #EE9572;
+    opacity:0.5;
+}
+
+#all-img
+{
+    text-align:center;
+    display:block;
+    
+}
+
+div.desc
+{
+    text-align:center;
+    font-weight:normal;
+    width:12.5em;
+    margin:1px;
+}
+
+ul.Map
+{
+    line-height:2.5em;
+    list-style-type:disc;
+}
+
+ul.Buttons
+{
+    line-height:4.5em;
+    list-style-type:none;
+}
+
+img { border-style:none; }
+
+ul.Inmap
+{
+    line-height:2.5em;
+    list-style-type:circle;
+}
+
+.Map a:link, .Map a:visited
+{
+    color:black;/*#810C15;*/
+    text-decoration:none;
+    background-color:#FFC2B1;
+    padding:0em 0.5em;
+}
+
+.Map a:hover
+{
+    color:#810C15;
+    text-decoration:none;
+    background-color:#EE9572;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+a:link, a:visited
+{
+    color:black;/*#810C15;*/
+    text-decoration:none;
+}
+
+a:hover
+{
+    color:#810C15;
+    text-decoration:none;
+}
+
+ul.nav
+{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.nav li
+{
+    display:inline;
+    line-height:1.6em;
+    color:#810C15;
+    margin:0em 1.5em;
+}
+
+li.current
+{
+    display:inline;
+    text-decoration:none;
+    color:#810C15;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color:#FFC2B1;
+    padding:0em 0.5em;
+}
+
+li.curl
+{
+    display:inline;
+    text-decoration:none;
+    color:#810C15;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color:#FFC2B1;
+    padding:0em 0em;
+}
+
+.nav li a:link, .nav li a:visited
+{
+    display:inline;
+    text-decoration:none;
+    color:#810C15;
+    padding:0em 0.5em;
+}
+
+.nav li a:hover
+{
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color:#FFC2B1;
+}
+
+table.center
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#customers
+{
+    width:50%;
+    border-collapse:collapse;
+    float:center;
+}
+
+#customers td, #customers th 
+{
+    font-size:1em;
+    border:1px solid #C98C7B;
+    padding:3px 7px 2px 7px;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+#customers th 
+{
+    font-size:1.1em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#C98C7B;
+    color:#ffffff;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+#customers tr.alt td 
+{
+    color:#000000;
+    background-color:#F69E84;
+}
+
+#review
+{
+    width:90%;
+    border-collapse:collapse;
+    float:center;
+}
+
+#review td, #review th 
+{
+    font-size:1em;
+    border:1px solid #C98C7B;
+    padding:3px 7px 2px 7px;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+#review th 
+{
+    font-size:1.1em;
+    text-align:center;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#C98C7B;
+    color:#ffffff;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+#review tr.alt td 
+{
+    color:#000000;
+    background-color:#F69E84;
+}
+
+#plane, #planeshadow { position:absolute; }
+
+div.marhaba { text-align:center; }
+
+#wide_img { float:right; }

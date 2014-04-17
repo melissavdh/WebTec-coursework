@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<link href="Pages.css" rel="stylesheet" type="text/css" />
+<title>Report</title>
+</head>
+<body>
+
+<div class="content">
+
+<h1>Report</h1>
+
+<p>Settings I have changed to ensure IE compatibility:
+<ul>
+  <li>Setting min-height:100% to my content container (which holds all the body 
+  except the header and footer).</li>
+  <li>Using border-radius as well as -moz-border-radius so that the rounded-corners 
+  display correctly in all browsers and IE9, as it is part of the W3C specification.  
+  However rounded-corner boxes are not available in any IE version before IE9.</li>
+  <li>Using the code for a pound sign rather than just typing one, as it wasn't 
+  displaying correctly in IE.</li>
+</ul>
+</p>
+
+<p>Site structure:
+<ul>
+  <li><strong>Home</strong></li>
+  <li><strong>Rooms</strong></li>
+  <ul>
+    <li>Ground Floor</li>
+    <li>First Floor</li>
+    <li>Rooftop Terrace</li>
+  </ul>
+  <li><strong>Room Prices</strong></li>
+  <li><strong>About Marrakech</strong></li>
+  <li><strong>Guestbook</strong></li>
+  <li><strong>Site Map</strong></li>
+  <ul>
+    <li>Home</li>
+    <li>Rooms</li>
+    <li>Room Prices</li>
+    <li>About Marrakech</li>
+    <li>Guestbook</li>
+    <li>Email us</li>
+  </ul>
+</ul>
+</p>
+
+<p>Features constant throughout site:
+<ul>
+  <li><strong>Header:</strong> I used the header template as described in the lecture 
+  notes, changing the height and colour to suit my design.  I have added a navigation 
+  bar, using an unordered list with each list item displayed inline, and text-decoration 
+  set to none to remove the bullet points.  I used a basic template from w3schools 
+  (http://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal) and 
+  amended it for my purposes.  The main aspects of my havigation bar are:
+  <ul>
+    <li>The link to the page the user is currently on is changed into text rather than 
+    a clickable link.</li>
+    <li>The link/text to the current page has a rounded-corner box behind it of 
+    the same colour as the body background rather than the header background.  
+    I used the example given at (http://www.css3.info/preview/rounded-border/) to 
+    implement this correctly.IE</li>
+    <li>When a user hovers over a possible link they can click on, the same 
+    rounded-corner box appears behind it as the box around the current page.</li>
+    <li>The links in the navigation bar remain identically positioned throughout 
+    the site.</li>
+    <li>The "Email Us" link automatically opens the user's default mail client 
+    if they have mail installed, creates a draft email to owners@riadestelle.com 
+    with the subject "Riad Estelle".</li>
+  </ul>
+  Formatting this horizontal navigation bar took me quite a while; making sure that 
+  the padding around each element remained constant regardless of whether it was 
+  a link or the current page, or both, so that the rounded-corner box was consistent 
+  on each one.  Also keeping the elements in exactly the same place regardless of 
+  where the mouse is hovering and what is selected took some time.
+  </li>
+  <li><strong>Footer:</strong> same colour and dimensions as the header.  I have 
+  added a copyright to it, centrally aligned.  I have made it sticky so that it is 
+  always at the bottom of the browser window, regardless of where the user has 
+  scrolled.</li>
+  <li><strong>Formatting:</strong> the header, footer, background, header, and text 
+  colours are consistent throughout the site.  They all use the same corresponding 
+  div in the css file - I have not defined more than one for different pages.</li>
+  <li><strong>Dimensions:</strong> I have used "em" to define all the dimensions 
+  except for borders, so that if the browser text is resized then my webpage 
+  remains correctly displayed.</li>
+</ul>
+</p>
+
+<p>Homepage:
+<ul>
+  <li><strong>Image gallery:</strong> I have created 3 images as links to parts of 
+  the site.  When the user hovers over an image, the opacity is reduced to 50%.  
+  I have used display:inline-block to position them centrally on the page in a row.</li>
+</ul>
+</p>
+
+<p>Rooms:
+<ul>
+  <li><strong>Links:</strong> The links are displayed as ordinay text in an 
+  unordered list, except that when the mouse hovers over one of the links, it 
+  is displayed with a rounded-corner box background of the same colour as the 
+  header and footer.</li>
+  <li><strong>Ground/First floor/Rooftop terrace:</strong> When a user clicks on 
+  one of these links, they can go back to the Rooms page using the navigation bar 
+  in the header.  The "Rooms" link in the header remains a link when the user has 
+  used it to access another page and want to go back.</li>
+</ul>
+</p>
+
+<p>Prices:
+<ul>
+  <li><strong>Table:</strong> I have displayed the room prices for on and off peak 
+  times of the year in a table, using the tutorial at http://www.w3schools.com/css/css_table.asp.</li>
+  <li><strong>Bold text:</strong> I have used "strong" to put text in bold.</li>  
+</ul>
+</p>
+
+<p>Marrakech:
+<ul>
+  <li><strong>Iframes:</strong> I have used two iframes to show previews of external 
+  sites.  This allows a user to browse them without leaving my website.</li>
+  <li><strong>Columns:</strong> I have arranged the page in a two-column layout, 
+  allowing each iframe to take up half the page, and descriptive text below it 
+  without having to interrupt the fuild layout.</li>  
+</ul>
+</p>
+
+<p>Guestbook:
+<ul>
+  <li><strong>Comment form:</strong> I have used created a form for a user to 
+  submit a review to the guestbook.  I have used the example at 
+  http://www.w3schools.com/HTML/tryit.asp?filename=tryhtml_form_mail and changed 
+  the values to fit with my site.</li>
+</ul>
+</p>
+
+<p>Site map:
+<ul>
+  <li><strong>Nested list:</strong>I have displayed the site map as one unordered 
+  list nested with another, showing the structure of my site explicitly.  The nested 
+  list uses a diferrent style of bullet to make it obvious.</li>
+  <li><strong>Links:</strong>I have formatted the links as in the Rooms page, so 
+  that they are formatted like ordinary text but gain a rounded-corner box when 
+  hovered over.</li>  
+</ul>
+</p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_2_3.xsd"
+  version="2.3"
+  metadata-complete="true"> 
+
+
+    <!-- General description of your web application -->
+
+    <display-name>Riad Estelle</display-name>
+    <description>
+      Book a holiday in Marrakech.
+    </description>
+
+    <!-- Context initialization parameters that define shared
+         String constants used within your application, which
+         can be customized by the system administrator who is
+         installing your application.  The values actually
+         assigned to these parameters can be retrieved in a
+         servlet or JSP page by calling:
+
+             String value =
+               getServletContext().getInitParameter("name");
+
+         where "name" matches the <param-name> element of
+         one of these initialization parameters.
+
+         You can define any number of context initialization
+         parameters, including zero.
+    -->
+
+    <!-- Define the default session timeout for your application,
+         in minutes.  From a servlet or JSP page, you can modify
+         the timeout for a particular session dynamically by using
+         HttpSession.getMaxInactiveInterval(). -->
+
+    <session-config>
+      <session-timeout>30</session-timeout>    <!-- 30 minutes -->
+    </session-config>
+
+    <!-- Content negotiation stuff -->
+
+    <filter>
+    <filter-name>content</filter-name>
+    <filter-class>filters.ContentFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+    <filter-name>content</filter-name>
+    <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+    <filter-name>content</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+
+    <!-- Database stuff -->
+
+    <resource-ref>
+       <description>DB Connection</description>
+       <res-ref-name>jdbc/riad</res-ref-name>
+       <res-type>javax.sql.DataSource</res-type>
+       <res-auth>Container</res-auth>
+    </resource-ref>
+
+    <context-param>
+       <param-name>
+          javax.servlet.jsp.jstl.sql.dataSource
+       </param-name>
+       <param-value>jdbc/riad</param-value>
+    </context-param>
+
+    <!-- Authorisation stuff -->
+
+    <security-constraint>
+        <web-resource-collection>
+          <web-resource-name>Manager access</web-resource-name>
+          <url-pattern>/admin.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+           <role-name>riad-admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Riad admin</realm-name>
+    </login-config>
+
+    <security-role>
+        <description>
+          Role required to access admin pages of website
+        </description>
+        <role-name>riad-admin</role-name>
+    </security-role>
+
+
+</web-app>
+

@@ -1,0 +1,22 @@
+marhaba in script create from scratch
+
+need to fancy up window a bit more
+svg animations
+javascript - form validations etc (slide 3). guestbook
+hack partial transparency for IE
+
+roof:
+ duplicate original image.  Convert duplicate to B&W by selecting Image->Mode->Greyscale, then convert back to RGB.  Create new (transparent) layer on top of original colour image.  Paste B&W into new layer over orinigal image.  Add layer mask to this B&W layer, selecting White (Full Opacity) in the options.  Select black as foreground colour in toolbox, use a brush to paint over the areas where the colour needs to come through.
+
+Prices:
+started with circle and rounded-corner rectangle to make basic outline of a P.  Used Fuzzy Select tool to select it all and apply a gradient fill (Blend Tool).  Selected everything except the P (i.e. the background) and filled it the default pink I'm using throughout the website.  Using blend tool I merged that pink with white and created lots of spirals in the background with different amounts of spacing between the lines.  Used Smudge Tool to smudge around some of the edges of the P, as if it were a shadow, and the Dodge/Burn Tool to lighten the outline of the P in the other areas.  Applied a Cartoon filter, and then the canvas effect.
+
+Marhaba:
+Drew one pixel at a time, anti-aliasing it manually.  Used a 1600% view to get the detail correct.
+
+Window:
+
+Filters->Edge-Detect->Edge then Prewitt Compass.
+
+Polaroid:
+Load image into GIMP and adjust canvas size to fit the typical borders around a polaroid image.  Filled the backgroud of the canvas (everywhere but the photo) with a linear gradient blending white and light grey to give a more 3D feel.  Added drop shadow to the image.  Added cellotape in new layer, with partial transparency to make it more realistic, merged the two.  Kept the background of the image transparent so that it can neatly fit onto my wep pages.

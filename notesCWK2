@@ -1,0 +1,44 @@
+hack partial transparency for IE
+sort plane in Chrome
+quiz - keep previous answers if error. don't reset until successful submission
+
+Roof:
+I have manipulated an original photo so that some parts are black and white and some are in their original colour.  To do this I duplicated the original image of the rooftop terrace, converted the duplicate to B&W (by selecting Image->Mode->Greyscale) then converted it back to RGB, so that it was still in black and white but of the same mode as the orignal image.  Then I created a new (transparent) layer on top of original colour image, and pasted the B&W image into this new layer over original image.  I added a layer mask to this B&W layer, selecting White (Full Opacity) in the options.  At this point I have a colour photo with the RGB mode of a black and white duplicate over the top.  To allow the colour to be seen, I selected black as foreground colour in toolbox and used a brush to paint over the areas where the colour needs to come through.  I got the inspiration for this from a similar tutorial I found online, http://gimpguru.org/Tutorials/SelectiveColorization.
+
+Prices:
+I created this image from scratch in GIMP.  I started by creating a circle and a rounded-corner rectangle to make a basic outline of a P.  Used Fuzzy Select tool to select it all and apply a gradient fill (Blend tool).  Selected everything except the P (i.e. the background) and filled it the default pink I'm using throughout the website.  Using the Blend tool I merged that pink with white and created lots of spirals in the background with different amounts of spacing between the lines.  I used Smudge Tool to smudge around some of the edges of the P, as if it were a shadow, and the Dodge/Burn Tool to lighten the outline of the P in the other areas.  Then I applied a Cartoon filter to make the image "pop" slightly, and then finally I used the Canvas effect.
+
+Marhaba:
+In GIMP drew one pixel at a time, anti-aliasing it manually.  Used a 1600% view to get the detail correct.  I have added a javascript function which is excecuted when the mouse hovers over the image - the cursor changes to a question mark.  This complements the image title, explaining that the Arabic script is Moroccan for welcome.  Another javascript function is executed when the mouse moves elsewhere, which changes the cursor back to default.  I created this from scratch using only standard Arabic script.
+
+Window:
+I started with an original colour photo of a window in the riad.  Then I just used the Prewitt Compass method of edge detection (Filters->Edge-Detect->Edge then Prewitt Compass).  This I just discovered while experimenting and thought it looked cool - I didn't follow a tutorial.
+
+Polaroid:
+Loaded photo of Koutoubia Mosque (found on Google) into GIMP and adjusted canvas size such that the image had the typical borders of a polaroid image.  Filled the backgroud of the canvas (everywhere but the photo) with a linear gradient blending white and light grey to give a more 3D feel.  Added a drop shadow to the image.  Added cellotape by creating a rectangle in new layer, with partial transparency to make it more realistic and I erased the two shorter edges of the rectangle to make it appear like cellotape has been torn.  Merged the seperate layers of the image to make one.  Applied the IWarp filter to the top and bottom of the image to make the polaroid seem slightly curled, and then rotated the image slightly.  Kept the background of the image transparent so that it can neatly fit onto my wep pages.  Followed the tutorial at http://howto.nicubunu.ro/gimp_polaroid_photo.
+
+3 Polaroids:
+Created each one individually in GIMP as before, but merged them all into one image afterwards.  Applied a coffee stain filter to add an artistic effect.  I had to adjust the css so that the image was horizontally aligned correctly - I had to create an id for this image and set float:right, so that it didn't force the page to be wider than it should be.
+
+Plane animation:
+Took image of a plane from BA homepage.  Duplicated it and coloured the duplicate black in GIMP.  Added blur to the black duplicate in Inkscape so that it looks like a shadow of the original plane.  Resized both images at the same time in Inkscape to be the actual size of what I wanted to appear on the webpage - as it is a small animation the quality did not need to be excellent, and I didn't want a slower processing time when the animation runs.  Saved both the plane and its shadow as seperate svg images.  Included them in the xhtml using the <object> tag.  Included the js file by adding <script src="plane.js" type="text/javascript"></script> to the <head>.  In the javascript I have two functions: start and move.  Start is called as soon as the page has loaded, and defines the inital positions of both the plane and the shadow images, and sets the opacity of the shadow to 1.  Move is called at the end of the start function, and defines the movement of both the plane and the shadow relative to their previous positions.  The plane moves 1 pixel right and 2 pixels upwards at each step, whilst the shadow moves right by the same amount but remains travelling in a horizontal direction.  I have also set the opacity of the shadow to decrease by 1% at each step using "planeshadow.style.opacity = planeshadow.style.opacity*0.99;".  I have used the setTimeout to call the move function every 20 milliseconds, creating a constant motion of the plane and its shadow.  I have defined a variable "top" which counts the number of steps taken from 400 to 0 - by this point the original plane has disappeared off the top of screen, so I have told the move function to only act on the images when top>0.  This is because I didn't want the javascript to keep running whilst the effects were not visible.  By this stage the shadow is almost completely transparent but for completion I have set its final opacity to be 0 when top=0 has been reached.  The overall idea is of a plane on an upwards descent over the user's broswer.  I had to edit the svg code as it refers to the original gif file I downloaded, which is saved on my system, and change it so that the link just refers to the gif files in the same directory as the svg, not the ones on my own system.  I didn't follow a tutorial for this, I just learnt how to do it by reading other animations and seeing the standard way to do it.  Note: Chromium does not support SVGs, but I have got the animation working in FF and Chrome.  I believe it works in IE but doesn't look so smooth.
+
+Form validation:
+Javascript is called from the html using onsubmit="return validateForm();" in the form declaration.  This js file checks that all the fields have been filled in correctly when the Submit button is pressed, including that the email address is of the correct format and that the default values are not just submitted.  If a field is not filled in properly then the current text will not be removed when the error message appears - it will remain exactly how the user entered it so that they can correct it easily.
+
+Quiz:
+Created a radio button form in html, formatting it in two columns so that it fits better on the page and wrapping the radio button definition in a < label > so that the text can be used to select an answer as well.  When the Submit button is pressed the function inside the js file is called, which marks the quiz.  It first ensures the user has answered every question (will return false otherwise thus halting, and will tell the user which question they haven't answered), and then calculates the overall score by adding a mark each time the radio button selected is the corrected answer.  I have hard-coded the position in the array of each correct answer, for example, "if (document.quiz.city[0].checked) mark++;".  The quiz then returns their score and a little comment, the comment depending on the score they have achieved.
+
+Room list:
+Created these three buttons in Inkscape.  Created a rounded-corner rectangle with a gradient from dark pink to light pink, and then duplicated and added a stroke to the second and put it behind the original.  Now it appears as if it has a darker border.  Then I cteated another rounded-corner rectangle (with the top corners rounded, the bottom two sharp) half as tall and white with an opacity of 50% and put that over the top half of the other two rectangles.  I added a gradient from white to transparent on this smaller rectangle.  Then I added a text box and formatted that so that the text stood out and was a decent size.  Then I duplicated the text frame, coloured it slightly darker, moved it slightly to the right and down and then put it behind the first text frame, giving the appearance of a shadow.  I followed the tutorial at http://inkscapetutorials.wordpress.com/2011/02/23/shiny-button-tutorial-for-inkscape-beginners.
+
+
+
+
+
+
+
+
+
+
+

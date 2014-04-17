@@ -1,0 +1,24 @@
+http://www.w3.org/International/tutorials/bidi-xhtml/
+
+"Welcome" header in Arabic, right to left text.  Visually ordered bidirectional HTML does not conform to the HTML specification.  Do not use CSS (the reasons will be given later.)  If you don’t provide a primary language code or set the code incorrectly it may be impossible for someone using a screen reader or Braille device to understand the content - set lang="ar".  Moroccan sub-tag marHaba
+
+TO DO
+
+stick footer to bottom of page
+format font everywhere
+Clicking site map adds width
+Report - IE hacks.  How I kept footer down.
+
+ It may be as simple as wrapping the <header>, <content> and <footer> elements in a div with bottom padding. then giving that a minimum height of 100%
+
+The other thing you can do is to give the wrapper #all-img a fixed width and give it margin:auto to centre it
+[15:12:05] Melissa Weaver: ooooh thats sorted it!
+[15:12:21] Melissa Weaver: so setting margin:auto centres something?
+[15:12:22] Sebastian Grant: Internet Explorer will have a cry baby moment at it
+[15:12:31] Sebastian Grant: if it has a fixed width yes
+[15:12:36] Melissa Weaver: I havent tested any of it in IE yet, its gonna have a tantrum at everything...
+[15:12:50] Sebastian Grant: and if you want to give margin to the top or bottom, but still centre it you'd do:
+[15:12:56] Sebastian Grant: margin: 25px auto;
+[15:13:00] Melissa Weaver: ah yes
+[15:13:04] Sebastian Grant: or margin:25px auto 10px
+

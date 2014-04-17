@@ -1,0 +1,54 @@
+TOMCAT INSTALLATION AND SETUP
+
+Downloaded openjdk-6-jdk via Ubuntu repository
+Updated JAVA_HOME and JRE_HOME in .bashrc from current environment variables to Tomcat's own Java installation, and added to PATH
+Set CATALINA_HOME in .bashrc to /home/melissa/tomcat.
+Downloaded .tar.gz packaged Tomcat version 7.0.14, unpacked into new "tomcat" directory
+chmod +x applied to startup and shutdown scripts
+
+Changed default http port from 8080 to 80 in tomcat/conf/server.xml
+Built jsvc from tar file in tomcat/bin, jsvc executable now in tomcat/bin.  Used instructtions at http://tomcat.apache.org/tomcat-7.0-doc/setup.html
+Created starup/shutdown script etc/init.d/tomcat allowing tomcat to be run from root as a non-root service: opens port 80, changes to non-root user, then starts Tomcat, so Tomcat is on port 80 but isn't running as root.  Script amended from http://waelchatila.com/2005/12/13/1134504717808.html and uses Tomcat's own Java installation as the JAVA_HOME variable
+
+Changed default https port from 8443 to 443 in tomcat/conf/server.xml
+
+Added manager, manager-gui, and admin roles and a user with these roles in tomcat/conf/tomcat-users.xml so that the Tomcat manager application can be used via localhost/manager
+
+Added:
+    <Context
+       docBase="/home/melissa/Documents/Y4/WebTec/CWK3" path="" debug="0"
+       reloadable="true">
+    </Context>
+to tomcat/conf/server.xml so that the app stored outside of the tomcat directory is used
+
+APP CREATION
+
+Created WAR directory structure CWK3 and put in website pages
+Created web.xml and put in CWK3/WEB-INF
+Converted Guestbook.html into addreview.jsp
+Created Guestbook.java which opens connection to riad database and contains Guestbook object with getters and setters to retrieve values from addreview.jsp so that prepared statement can be built and executed.  Compiled Guestbook.java and put class into jar file, moved jar file into CWK3/WEB-INF/lib
+Imported Guestbook.jar, and jstl core and sql taglibs into addreview.jsp
+Created Guestbook.jsp which uses jstl taglibs to query the guestbook table and display the non-confidential fields in a table so viewer can see other people's reviews.  There is a link taking the user to addreview.jsp where they can submit a new review to the database.
+Used request.getParameter() to put form entries into strings
+Created new Guestbook object and set the variables as the strings from the form entries
+If none of the strings are null then called newEntry from Guestbook.java to set up and execute prepared statement adding record to guestbook table in database
+When the form data is submitted the page redirects back to Guestbook.jsp where they will see their review at the top of the table.
+
+DATABASE INSTALLATION AND SETUP
+
+Downloaded derby, created home/derby directory
+Added derby.jar to tomcat/lib
+Created riad database by
+java -jar derby/lib/derbyrun.jar ij
+ij> connect 'jdbc:derby:databases/riad;create=true';
+Added <resource> stuff from lecture slides to tomcat/conf/server.xml
+Added <resource-ref> stuff from lecture slides to CWK3/WEB-INF/web.xml
+
+JSTL INSTALLATION AND SETUP
+
+Downloaded jstl version 1.0
+Added jstl.jar, standard.jar to CWK3/WEB-INF/lib
+
+Added filters.jar to CWK3/WEB-INF/lib
+Added content negotiation text from Web Tech pages into CWK3/WEB-INF/web.xml
+Changed version of webapp to 2.3 in CWK3/WEB-INF/web.xml so it is compatible with jstl version

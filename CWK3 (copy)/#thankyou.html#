@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<link href="Pages.css" rel="stylesheet" type="text/css" />
+<script src="validate.js" type="text/javascript"></script>
+<title>Riad Estelle</title>
+</head>
+<body>
+
+<%@ taglib uri="http://java.sun.com/jstl/sql" prefix="sql" %>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+
+
+<div class="header">
+  <ul class="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Rooms.html">Rooms</a></li>
+    <li><a href="Prices.html">Prices</a></li>
+    <li><a href="Marrakech.html">Marrakech</a></li>
+    <li class="current">Guestbook</li>
+    <li><a href="Sitemap.html">Site Map</a></li>
+    <li><a href="mailto:owners@riadestelle.com?Subject=Riad%20Estelle">Email Us</a></li>
+  </ul>
+</div>
+
+<div class="content">
+
+<h1>Thank you!</h1>
+
+<p>Thank you very much for your review.  We promise to keep your name and email address confidential, we just keep them in the event that we need to contact you.</p>
+
+<sql:setDataSource dataSource="jdbc/riad"/> 
+<sql:query var="results" sql="SELECT season, review FROM GUESTBOOK">
+</sql:query>
+<table id="customers" class="center">
+<tr>
+  <th>Current Reviews</th>
+  <th>Season</th>
+</tr>
+<c:forEach var="row" items="${results.rows}">
+<p>
+<tr>
+<td><c:out value="${row.review}"/></td>
+<td><c:out value="${row.season}"/></td>
+</tr>
+</p>
+</c:forEach>
+</table>
+</div>
+
+
+
+<div class="footer">
+&#169;2011 Melissa Weaver
+</div>
+
+</body>
+</html>
